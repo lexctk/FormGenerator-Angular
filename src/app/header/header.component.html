@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-custom">
+  <div class="container">
+    <ul class="navbar-nav">
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="/">Form Generator</a>
+      </li>
+    </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/form">Form</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item ml-auto" routerLinkActive="active">
+          <a class="nav-link" (click)="onLogin()">Login</a>
+        </li>
+        <li class="nav-item ml-auto" routerLinkActive="active">
+          <a class="nav-link" (click)="onLogout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
