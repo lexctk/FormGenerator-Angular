@@ -7,6 +7,7 @@
   "description": "Poll Description",
   "external_id": "ID",
   "type": "Poll",
+  "number_of_pages": 3,
   "questions_by_types": [
     {
       "type_name": "General",
@@ -14,8 +15,8 @@
         {
           "id_question": 220,
           "id_poll": 21,
-          "label": "Textbox question for general attendee?",
-          "description": "Textbox question for general attendee?",
+          "label": "Textbox question number 220?",
+          "description": "Helper text number 220?",
           "order": 1,
           "max_size": 2000,
           "nb_answer": 0,
@@ -28,19 +29,17 @@
           "id_question_dependency": -1,
           "question_dependency_answer": "",
           "participant_type": "General Attendee",
-          "answers": [
-          ],
           "type": "Question"
         },
         {
           "id_question": 221,
           "id_poll": 21,
-          "label": "Dropdown question for general attendee?",
-          "description": "Dropdown question for general attendee?",
+          "label": "Dropdown question number 221?",
+          "description": "Helper text number 221?",
           "order": 2,
           "max_size": 0,
           "nb_answer": 3,
-          "mandatory": true,
+          "mandatory": false,
           "number": "2",
           "page_number": 1,
           "id_block": -1,
@@ -71,12 +70,12 @@
         {
           "id_question": 222,
           "id_poll": 21,
-          "label": "Textbox question for general attendee, block 0?",
-          "description": "Textbox question for general attendee, block 0?",
+          "label": "Block 0: Textbox question number 222?",
+          "description": "Helper text number 222?",
           "order": 3,
           "max_size": 2000,
           "nb_answer": 0,
-          "mandatory": true,
+          "mandatory": false,
           "number": "3.1",
           "page_number": 1,
           "id_block": 26,
@@ -85,15 +84,13 @@
           "id_question_dependency": -1,
           "question_dependency_answer": "",
           "participant_type": "General Attendee",
-          "answers": [
-          ],
           "type": "Question"
         },
         {
           "id_question": 223,
           "id_poll": 21,
-          "label": "Checkbox question for general attendee, block 0?",
-          "description": "Checkbox question for general attendee, block 0?",
+          "label": "Block 0: Checkbox question number 223?",
+          "description": "Helper text number 223?",
           "order": 4,
           "max_size": 0,
           "nb_answer": 2,
@@ -123,12 +120,12 @@
         {
           "id_question": 224,
           "id_poll": 21,
-          "label": "Textarea child question for general attendee, block 0?",
-          "description": "Textarea child question for general attendee, block 0?",
+          "label": "Block 0: Textarea child question number 224?",
+          "description": "Helper text number 224?",
           "order": 5,
           "max_size": 2000,
           "nb_answer": 0,
-          "mandatory": true,
+          "mandatory": false,
           "number": "3.2.1",
           "page_number": 1,
           "id_block": 26,
@@ -137,15 +134,13 @@
           "id_question_dependency": 223,
           "question_dependency_answer": "0",
           "participant_type": "General Attendee",
-          "answers": [
-          ],
           "type": "Question"
         },
         {
           "id_question": 225,
           "id_poll": 21,
-          "label": "Dropdown child question for general attendee, block 0?",
-          "description": "Dropdown child question for general attendee, block 0?",
+          "label": "Block 0: Dropdown child question number 225?",
+          "description": "Helper text number 225?",
           "order": 6,
           "max_size": 0,
           "nb_answer": 2,
@@ -175,12 +170,12 @@
         {
           "id_question": 226,
           "id_poll": 21,
-          "label": "Comment box child question for general attendee, block 0?",
-          "description": "Comment box child question for general attendee, block 0?",
+          "label": "Block 0: Comment box child question number 226?",
+          "description": "Helper text number 226?",
           "order": 7,
           "max_size": 2000,
           "nb_answer": 0,
-          "mandatory": true,
+          "mandatory": false,
           "number": "3.2.2.1",
           "page_number": 1,
           "id_block": 26,
@@ -189,15 +184,13 @@
           "id_question_dependency": 225,
           "question_dependency_answer": "0",
           "participant_type": "General Attendee",
-          "answers": [
-          ],
           "type": "Question"
         },
         {
           "id_question": 227,
           "id_poll": 21,
-          "label": "Radio button question for general attendee?",
-          "description": "Radio button question for general attendee?",
+          "label": "Radio button question number 227?",
+          "description": "Helper text number 227?",
           "order": 8,
           "max_size": 0,
           "nb_answer": 3,
@@ -232,12 +225,12 @@
         {
           "id_question": 228,
           "id_poll": 21,
-          "label": "Comment box question for general attendee?",
-          "description": "Comment box question for general attendee?",
+          "label": "Comment box question number 228?",
+          "description": "Helper text number 228?",
           "order": 9,
           "max_size": 2000,
           "nb_answer": 0,
-          "mandatory": true,
+          "mandatory": false,
           "number": "4.1",
           "page_number": 1,
           "id_block": -1,
@@ -246,8 +239,6 @@
           "id_question_dependency": 227,
           "question_dependency_answer": "0",
           "participant_type": "General Attendee",
-          "answers": [
-          ],
           "type": "Question"
         }
       ],
@@ -265,8 +256,8 @@
         {
           "id_question": 229,
           "id_poll": 21,
-          "label": "Dropdown question for general attendee?",
-          "description": "Dropdown question for general attendee?",
+          "label": "Dropdown question number 229?",
+          "description": "Helper text number 229?",
           "order": 10,
           "max_size": 0,
           "nb_answer": 3,
@@ -306,35 +297,33 @@
         {
           "id_question": 34,
           "id_poll": 21,
-          "label": "Comment box question for general attendee?",
-          "description": "Comment box question for general attendee?",
+          "label": "Comment box question number 34?",
+          "description": "Helper text number 34?",
           "order": 1,
           "max_size": 2000,
           "nb_answer": 0,
-          "mandatory": true,
+          "mandatory": false,
           "number": "1",
-          "page_number": -1,
+          "page_number": 1,
           "id_block": -1,
           "id_answer_type": "CommentsBox",
           "id_question_type": 3,
           "id_question_dependency": -1,
           "question_dependency_answer": "",
           "participant_type": "General Attendee",
-          "answers": [
-          ],
           "type": "Question"
         },
         {
           "id_question": 35,
           "id_poll": 21,
-          "label": "Radio button question for general attendee?",
-          "description": "Radio button question for general attendee?",
+          "label": "Radio button question number 35?",
+          "description": "Helper text number 35?",
           "order": 2,
           "max_size": 0,
           "nb_answer": 3,
           "mandatory": true,
           "number": "2",
-          "page_number": -1,
+          "page_number": 1,
           "id_block": -1,
           "id_answer_type": "RadioButtonList",
           "id_question_type": 3,
@@ -363,40 +352,32 @@
         {
           "id_question": 36,
           "id_poll": 21,
-          "label": "Comment box question for general attendee?",
-          "description": "Comment box question for general attendee?",
+          "label": "Comment box question number 36?",
+          "description": "Helper text number 36?",
           "order": 3,
           "max_size": 2000,
           "nb_answer": 0,
-          "mandatory": true,
+          "mandatory": false,
           "number": "2.1",
-          "page_number": -1,
+          "page_number": 1,
           "id_block": -1,
           "id_answer_type": "CommentsBox",
           "id_question_type": 3,
           "id_question_dependency": 35,
           "question_dependency_answer": "0",
           "participant_type": "General Attendee",
-          "answers": [
-          ],
           "type": "Question"
         }
       ]
     },
     {
-      "type_name": "Workshop",
-      "questions": [
-      ]
+      "type_name": "Workshop"
     },
     {
-      "type_name": "Boardroom",
-      "questions": [
-      ]
+      "type_name": "Boardroom"
     },
     {
-      "type_name": "Demo",
-      "questions": [
-      ]
+      "type_name": "Demo"
     }
   ]
 }

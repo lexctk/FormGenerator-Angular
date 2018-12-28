@@ -1,3 +1,10 @@
-<h1>Home page</h1>
+<div class="text-center">
+  <h1>Home page</h1>
 
-<p class="mt-5">This page should be replaced with default landing page before the user logs in</p>
+  <p class="mt-5">This page should be replaced with default landing page before the user logs in.</p>
+  <p>Non authenticated users don't have access to survey</p>
+
+  <button (click)="onLoadSurvey()" class="btn btn-primary mt-5" *ngIf="isAuthenticated$ | async">Start Survey</button>
+
+  <button (click)="onLogin()" class="btn btn-primary mt-5" *ngIf="!(isAuthenticated$ | async)">Login</button>
+</div>
