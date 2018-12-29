@@ -1,23 +1,66 @@
-<div *ngIf="formJSON">
+<div *ngIf="formJson">
 
-  <h1>{{ formJSON.name }}</h1>
-  <div class="mt-3">{{ formJSON.description }}</div>
+  <h1>{{ formJson.name }}</h1>
+  <div class="mt-3">{{ formJson.description }}</div>
 
   <div class="mt-3">
     <form [formGroup]="generatorForm">
-      <div *ngFor="let formControlName of formControlNames; let i = index">
+      <div *ngFor="let formControlName of formControlNames; let i = index" class="my-5">
         <div class="form-group">
           <label [for]="formControlName">
-            {{ questionsLabel[i] }}
+            {{ questions[i].label }}
           </label>
-          <input [id]="formControlName" class="form-control" type="text" [name]="formControlName" [formControlName]="formControlName">
+
+          <ng-container [ngSwitch]="questions[i].id_answer_type">
+            <ng-container *ngSwitchCase="'TextBox'">
+              <input class="form-control" type="text"
+                     [id]="formControlName" [name]="formControlName" [formControlName]="formControlName">
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'CommentsBox'">
+              <textarea class="form-control" [id]="formControlName" rows="3"></textarea>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'DropDownList'">
+              <select class="form-control" [id]="formControlName">
+                <option *ngFor="let answer of questions[i].answers" [value]="answer.answer_value">{{ answer.answer_label }}</option>
+              </select>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'CheckBoxList'">
+              <div class="form-check" *ngFor="let answer of questions[i].answers">
+                <input class="form-check-input" type="checkbox" [value]="answer.answer_value" [id]="formControlName + answer.answer_value">
+                <label class="form-check-label" [for]="formControlName + answer.answer_value">
+                  {{ answer.answer_label }}
+                </label>
+              </div>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'RadioButtonList'">
+              <div class="form-check" *ngFor="let answer of questions[i].answers">
+                <input class="form-check-input" type="radio" [name]="formControlName + answer.answer_value"
+                       [id]="formControlName + answer.answer_value" [value]="answer.answer_value">
+                <label class="form-check-label" [for]="formControlName + answer.answer_value">
+                  {{ answer.answer_label }}
+                </label>
+              </div>
+            </ng-container>
+          </ng-container>
+
           <small [id]="formControlName + 'Help'" class="form-text text-muted"
                  *ngIf="!generatorForm.get(formControlName).valid && generatorForm.get(formControlName).touched">
-            {{ questionsDescription[i] }}
+
+            <ng-container *ngIf="generatorForm.get(formControlName).errors['required']">
+              {{ errorMessageRequired }}
+            </ng-container>
+            <ng-container *ngIf="generatorForm.get(formControlName).errors['maxlength']">
+              {{ errorMessageMaxSize }} {{ questions[i].max_size }}
+            </ng-container>
+
           </small>
         </div>
       </div>
-      <button class="btn btn-primary"></button>
+      <button class="btn btn-primary">Submit</button>
     </form>
   </div>
 </div>

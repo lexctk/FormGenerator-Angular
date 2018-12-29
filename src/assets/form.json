@@ -6,8 +6,10 @@
   "name": "Poll Name",
   "description": "Poll Description",
   "external_id": "ID",
-  "type": "Poll",
+  "type_name": "Poll",
   "number_of_pages": 3,
+  "error_message_required": "Answer is required",
+  "error_message_max_size": "Answer max length is ",
   "questions_by_types": [
     {
       "type_name": "General",
@@ -18,7 +20,7 @@
           "label": "Textbox question number 220?",
           "description": "Helper text number 220?",
           "order": 1,
-          "max_size": 2000,
+          "max_size": 5,
           "nb_answer": 0,
           "mandatory": true,
           "number": "1",
@@ -29,7 +31,7 @@
           "id_question_dependency": -1,
           "question_dependency_answer": "",
           "participant_type": "General Attendee",
-          "type": "Question"
+          "type_name": "Question"
         },
         {
           "id_question": 221,
@@ -51,21 +53,21 @@
           "answers": [
             {
               "answer_label": "Answer 1",
-              "answer_value": "Answer 1",
-              "type": "Answer"
+              "answer_value": "A1",
+              "type_name": "Answer"
             },
             {
               "answer_label": "Answer 2",
-              "answer_value": "Answer 2",
-              "type": "Answer"
+              "answer_value": "A2",
+              "type_name": "Answer"
             },
             {
               "answer_label": "Answer 3",
-              "answer_value": "Answer 3",
-              "type": "Answer"
+              "answer_value": "A3",
+              "type_name": "Answer"
             }
           ],
-          "type": "Question"
+          "type_name": "Question"
         },
         {
           "id_question": 222,
@@ -73,7 +75,7 @@
           "label": "Block 0: Textbox question number 222?",
           "description": "Helper text number 222?",
           "order": 3,
-          "max_size": 2000,
+          "max_size": 20,
           "nb_answer": 0,
           "mandatory": false,
           "number": "3.1",
@@ -84,7 +86,7 @@
           "id_question_dependency": -1,
           "question_dependency_answer": "",
           "participant_type": "General Attendee",
-          "type": "Question"
+          "type_name": "Question"
         },
         {
           "id_question": 223,
@@ -107,15 +109,15 @@
             {
               "answer_label": "Answer 0",
               "answer_value": "Answer 0",
-              "type": "Answer"
+              "type_name": "Answer"
             },
             {
               "answer_label": "Answer 1",
               "answer_value": "Answer 1",
-              "type": "Answer"
+              "type_name": "Answer"
             }
           ],
-          "type": "Question"
+          "type_name": "Question"
         },
         {
           "id_question": 224,
@@ -134,7 +136,7 @@
           "id_question_dependency": 223,
           "question_dependency_answer": "0",
           "participant_type": "General Attendee",
-          "type": "Question"
+          "type_name": "Question"
         },
         {
           "id_question": 225,
@@ -157,15 +159,15 @@
             {
               "answer_label": "Answer 0",
               "answer_value": "Answer 0",
-              "type": "Answer"
+              "type_name": "Answer"
             },
             {
               "answer_label": "Answer 1",
               "answer_value": "Answer 1",
-              "type": "Answer"
+              "type_name": "Answer"
             }
           ],
-          "type": "Question"
+          "type_name": "Question"
         },
         {
           "id_question": 226,
@@ -184,7 +186,7 @@
           "id_question_dependency": 225,
           "question_dependency_answer": "0",
           "participant_type": "General Attendee",
-          "type": "Question"
+          "type_name": "Question"
         },
         {
           "id_question": 227,
@@ -207,20 +209,20 @@
             {
               "answer_label": "Answer 0",
               "answer_value": "Answer 0",
-              "type": "Answer"
+              "type_name": "Answer"
             },
             {
               "answer_label": "Answer 1",
               "answer_value": "Answer 1",
-              "type": "Answer"
+              "type_name": "Answer"
             },
             {
               "answer_label": "Answer 2",
               "answer_value": "Answer 2",
-              "type": "Answer"
+              "type_name": "Answer"
             }
           ],
-          "type": "Question"
+          "type_name": "Question"
         },
         {
           "id_question": 228,
@@ -239,14 +241,14 @@
           "id_question_dependency": 227,
           "question_dependency_answer": "0",
           "participant_type": "General Attendee",
-          "type": "Question"
+          "type_name": "Question"
         }
       ],
       "blocks": [
         {
           "id_block": 26,
           "block_name": "Block 0",
-          "type": "Block"
+          "type_name": "Block"
         }
       ]
     },
@@ -274,20 +276,20 @@
             {
               "answer_label": "Answer 0",
               "answer_value": "Answer 0",
-              "type": "Answer"
+              "type_name": "Answer"
             },
             {
               "answer_label": "Answer 1",
               "answer_value": "Answer 1",
-              "type": "Answer"
+              "type_name": "Answer"
             },
             {
               "answer_label": "Answer 2",
               "answer_value": "Answer 2",
-              "type": "Answer"
+              "type_name": "Answer"
             }
           ],
-          "type": "Question"
+          "type_name": "Question"
         }
       ]
     },
@@ -307,11 +309,11 @@
           "page_number": 1,
           "id_block": -1,
           "id_answer_type": "CommentsBox",
-          "id_question_type": 3,
+          "id_question_type": "Meeting",
           "id_question_dependency": -1,
           "question_dependency_answer": "",
           "participant_type": "General Attendee",
-          "type": "Question"
+          "type_name": "Question"
         },
         {
           "id_question": 35,
@@ -326,7 +328,7 @@
           "page_number": 1,
           "id_block": -1,
           "id_answer_type": "RadioButtonList",
-          "id_question_type": 3,
+          "id_question_type": "Meeting",
           "id_question_dependency": -1,
           "question_dependency_answer": "",
           "participant_type": "General Attendee",
@@ -334,20 +336,20 @@
             {
               "answer_label": "Answer 0",
               "answer_value": "Answer 0",
-              "type": "Answer"
+              "type_name": "Answer"
             },
             {
               "answer_label": "Answer 1",
               "answer_value": "Answer 1",
-              "type": "Answer"
+              "type_name": "Answer"
             },
             {
               "answer_label": "Answer 2",
               "answer_value": "Answer 2",
-              "type": "Answer"
+              "type_name": "Answer"
             }
           ],
-          "type": "Question"
+          "type_name": "Question"
         },
         {
           "id_question": 36,
@@ -362,11 +364,11 @@
           "page_number": 1,
           "id_block": -1,
           "id_answer_type": "CommentsBox",
-          "id_question_type": 3,
+          "id_question_type": "Meeting",
           "id_question_dependency": 35,
           "question_dependency_answer": "0",
           "participant_type": "General Attendee",
-          "type": "Question"
+          "type_name": "Question"
         }
       ]
     },
