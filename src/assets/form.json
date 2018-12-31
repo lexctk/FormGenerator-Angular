@@ -10,6 +10,7 @@
   "number_of_pages": 3,
   "error_message_required": "Answer is required",
   "error_message_max_size": "Answer max length is ",
+  "poll_leave_message": "Do you want to discard the changes?",
   "questions_by_types": [
     {
       "type_name": "General",
@@ -18,7 +19,7 @@
           "id_question": 220,
           "id_poll": 21,
           "label": "Textbox question number 220?",
-          "description": "Helper text number 220?",
+          "description": "Description text number 220.",
           "order": 1,
           "max_size": 5,
           "nb_answer": 0,
@@ -37,7 +38,7 @@
           "id_question": 221,
           "id_poll": 21,
           "label": "Dropdown question number 221?",
-          "description": "Helper text number 221?",
+          "description": "Description text number 221.",
           "order": 2,
           "max_size": 0,
           "nb_answer": 3,
@@ -73,7 +74,7 @@
           "id_question": 222,
           "id_poll": 21,
           "label": "Block 0: Textbox question number 222?",
-          "description": "Helper text number 222?",
+          "description": "Description text number 222.",
           "order": 3,
           "max_size": 20,
           "nb_answer": 0,
@@ -92,7 +93,7 @@
           "id_question": 223,
           "id_poll": 21,
           "label": "Block 0: Checkbox question number 223?",
-          "description": "Helper text number 223?",
+          "description": "Description text number 223.",
           "order": 4,
           "max_size": 0,
           "nb_answer": 2,
@@ -108,12 +109,12 @@
           "answers": [
             {
               "answer_label": "Answer 0",
-              "answer_value": "Answer 0",
+              "answer_value": "A0",
               "type_name": "Answer"
             },
             {
               "answer_label": "Answer 1",
-              "answer_value": "Answer 1",
+              "answer_value": "A1",
               "type_name": "Answer"
             }
           ],
@@ -122,12 +123,12 @@
         {
           "id_question": 224,
           "id_poll": 21,
-          "label": "Block 0: Textarea child question number 224?",
-          "description": "Helper text number 224?",
+          "label": "Block 0: Comment box child question number 224?",
+          "description": "Description text number 224.",
           "order": 5,
           "max_size": 2000,
           "nb_answer": 0,
-          "mandatory": false,
+          "mandatory": true,
           "number": "3.2.1",
           "page_number": 1,
           "id_block": 26,
@@ -142,7 +143,7 @@
           "id_question": 225,
           "id_poll": 21,
           "label": "Block 0: Dropdown child question number 225?",
-          "description": "Helper text number 225?",
+          "description": "Description text number 225.",
           "order": 6,
           "max_size": 0,
           "nb_answer": 2,
@@ -158,12 +159,12 @@
           "answers": [
             {
               "answer_label": "Answer 0",
-              "answer_value": "Answer 0",
+              "answer_value": "A0",
               "type_name": "Answer"
             },
             {
               "answer_label": "Answer 1",
-              "answer_value": "Answer 1",
+              "answer_value": "A1",
               "type_name": "Answer"
             }
           ],
@@ -173,7 +174,7 @@
           "id_question": 226,
           "id_poll": 21,
           "label": "Block 0: Comment box child question number 226?",
-          "description": "Helper text number 226?",
+          "description": "Description text number 226?",
           "order": 7,
           "max_size": 2000,
           "nb_answer": 0,
@@ -192,7 +193,7 @@
           "id_question": 227,
           "id_poll": 21,
           "label": "Radio button question number 227?",
-          "description": "Helper text number 227?",
+          "description": "Description text number 227.",
           "order": 8,
           "max_size": 0,
           "nb_answer": 3,
@@ -208,17 +209,17 @@
           "answers": [
             {
               "answer_label": "Answer 0",
-              "answer_value": "Answer 0",
+              "answer_value": "A0",
               "type_name": "Answer"
             },
             {
               "answer_label": "Answer 1",
-              "answer_value": "Answer 1",
+              "answer_value": "A1",
               "type_name": "Answer"
             },
             {
               "answer_label": "Answer 2",
-              "answer_value": "Answer 2",
+              "answer_value": "A2",
               "type_name": "Answer"
             }
           ],
@@ -228,7 +229,7 @@
           "id_question": 228,
           "id_poll": 21,
           "label": "Comment box question number 228?",
-          "description": "Helper text number 228?",
+          "description": "Description text number 228.",
           "order": 9,
           "max_size": 2000,
           "nb_answer": 0,
@@ -259,7 +260,7 @@
           "id_question": 229,
           "id_poll": 21,
           "label": "Dropdown question number 229?",
-          "description": "Helper text number 229?",
+          "description": "Description text number 229.",
           "order": 10,
           "max_size": 0,
           "nb_answer": 3,
@@ -275,17 +276,17 @@
           "answers": [
             {
               "answer_label": "Answer 0",
-              "answer_value": "Answer 0",
+              "answer_value": "A0",
               "type_name": "Answer"
             },
             {
               "answer_label": "Answer 1",
-              "answer_value": "Answer 1",
+              "answer_value": "A1",
               "type_name": "Answer"
             },
             {
               "answer_label": "Answer 2",
-              "answer_value": "Answer 2",
+              "answer_value": "A2",
               "type_name": "Answer"
             }
           ],
@@ -300,7 +301,7 @@
           "id_question": 34,
           "id_poll": 21,
           "label": "Comment box question number 34?",
-          "description": "Helper text number 34?",
+          "description": "Description text number 34.",
           "order": 1,
           "max_size": 2000,
           "nb_answer": 0,
@@ -319,7 +320,7 @@
           "id_question": 35,
           "id_poll": 21,
           "label": "Radio button question number 35?",
-          "description": "Helper text number 35?",
+          "description": "Description text number 35.",
           "order": 2,
           "max_size": 0,
           "nb_answer": 3,
@@ -335,17 +336,17 @@
           "answers": [
             {
               "answer_label": "Answer 0",
-              "answer_value": "Answer 0",
+              "answer_value": "A0",
               "type_name": "Answer"
             },
             {
               "answer_label": "Answer 1",
-              "answer_value": "Answer 1",
+              "answer_value": "A1",
               "type_name": "Answer"
             },
             {
               "answer_label": "Answer 2",
-              "answer_value": "Answer 2",
+              "answer_value": "A2",
               "type_name": "Answer"
             }
           ],
@@ -355,7 +356,7 @@
           "id_question": 36,
           "id_poll": 21,
           "label": "Comment box question number 36?",
-          "description": "Helper text number 36?",
+          "description": "Description text number 36.",
           "order": 3,
           "max_size": 2000,
           "nb_answer": 0,

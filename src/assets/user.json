@@ -1,0 +1,31 @@
+{
+  "user_id": 1,
+  "id_event": 1,
+  "participation": [
+    {
+      "type": "Activity",
+      "activity_ids": [13, 16, 17],
+      "activity_names": ["Activity 13", "Activity 16", "Activity 17"]
+    },
+    {
+      "type": "Meeting",
+      "activity_ids": [11, 12],
+      "activity_names": ["Meeting 11", "Meeting 12"]
+    },
+    {
+      "type": "Workshop",
+      "activity_ids": [1],
+      "activity_names": ["Workshop 1"]
+    },
+    {
+      "type": "Boardroom",
+      "activity_ids": [7, 8],
+      "activity_names": ["Boardroom 7", "Boardroom 8"]
+    },
+    {
+      "type": "Demo",
+      "activity_ids": [9],
+      "activity_names": ["Demo 9"]
+    }
+  ]
+}

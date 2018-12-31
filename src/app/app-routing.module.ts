@@ -4,10 +4,13 @@ import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { AuthGuardService } from './authentication/auth-guard.service';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { CanDeactivateGuard } from './services/can-component-deactivate.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'form', canActivate: [AuthGuardService], component: FormBuilderComponent }
+  { path: 'survey', canActivate: [AuthGuardService], component: FormBuilderComponent, canDeactivate: [CanDeactivateGuard] },
+  { path: '404', component: ErrorPageComponent }
 ];
 
 @NgModule({
