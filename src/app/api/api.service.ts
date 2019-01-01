@@ -4,6 +4,7 @@ import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { FormJson } from '../models/form-json.model';
 import { FormGroup } from '@angular/forms';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,11 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   apiURL = 'assets/form.json';
+
+  // TODO: define POST url
   postURL = 'postURL';
+
+  userApiURL = 'assets/user.json';
 
   private static handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -28,13 +33,18 @@ export class ApiService {
       'Something bad happened; please try again later.');
   }
 
-  getFormJSON() {
+  getFormJson() {
     return this.http.get<FormJson>(this.apiURL)
       .pipe(catchError(ApiService.handleError));
   }
 
-  postFormJSON(answers: FormGroup) {
+  postFormJson(answers: FormGroup) {
     return this.http.post<FormGroup>(this.postURL, answers)
+      .pipe(catchError(ApiService.handleError));
+  }
+
+  getUserJson () {
+    return this.http.get<User>(this.userApiURL)
       .pipe(catchError(ApiService.handleError));
   }
 }

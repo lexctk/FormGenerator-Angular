@@ -1,7 +1,8 @@
 <div *ngIf="formJson">
   <h1>{{ formJson.name }}</h1>
-  <div class="mt-3">{{ formJson.description }}</div>
-
+  <div class="mt-3">
+    {{ formJson.description }}
+  </div>
   <div class="mt-3">
     <form [formGroup]="generatorForm" (ngSubmit)="onSubmit()">
 

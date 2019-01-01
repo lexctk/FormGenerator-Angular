@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ApiService } from '../api/api.service';
 import { Observable, Subscription } from 'rxjs';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -6,29 +6,38 @@ import { FormJson } from '../models/form-json.model';
 import { CanComponentDeactivate } from '../services/can-component-deactivate.service';
 import { Router } from '@angular/router';
 import { requiredCheckboxValidator } from '../directives/required-validator.directive';
+import { UserService } from '../services/user.service';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-form-builder',
   templateUrl: './form-builder.component.html',
   styleUrls: ['./form-builder.component.css']
 })
-export class FormBuilderComponent implements OnInit, CanComponentDeactivate {
+export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnDestroy {
   formJson: FormJson;
-  subscription: Subscription;
   generatorForm: FormGroup;
   formControlNames: string[] = [];
   changesSaved = false;
 
+  userSubscription: Subscription;
+  user: User;
+
   constructor(private router: Router,
-              private apiService: ApiService) {
+              private apiService: ApiService,
+              private userService: UserService) {
   }
 
   ngOnInit() {
     this.getJson();
+    this.user = this.userService.getUser();
+    this.userSubscription = this.userService.userChanged.subscribe((user: User) => {
+      this.user = user;
+    });
   }
 
   getJson () {
-    this.subscription = this.apiService.getFormJSON().subscribe(
+    this.apiService.getFormJson().subscribe(
       (data: FormJson) => this.success(data), () => this.failed()
     );
   }
@@ -39,7 +48,6 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate {
   }
 
   private failed() {
-    // TODO: review 404 page
     this.router.navigate(['/404']).then();
   }
 
@@ -116,7 +124,7 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate {
       console.log(this.generatorForm.value);
 
       // TODO post to API
-      this.apiService.postFormJSON(this.generatorForm.value).subscribe();
+      this.apiService.postFormJson(this.generatorForm.value).subscribe();
     } else {
       // validate all form fields
       Object.keys(this.generatorForm.controls).forEach(field => {
@@ -132,5 +140,9 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate {
     } else {
       return true;
     }
+  }
+
+  ngOnDestroy(): void {
+    this.userSubscription.unsubscribe();
   }
 }

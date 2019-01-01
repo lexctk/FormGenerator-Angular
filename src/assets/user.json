@@ -1,31 +1,32 @@
 {
   "user_id": 1,
+  "username": "Lex",
   "id_event": 1,
   "participation": [
     {
-      "type": "Activity",
-      "activity_ids": [13, 16, 17],
-      "activity_names": ["Activity 13", "Activity 16", "Activity 17"]
+      "participation_type": "Activity",
+      "participation_ids": [13, 16, 17],
+      "participation_names": ["Activity 13", "Activity 16", "Activity 17"]
     },
     {
-      "type": "Meeting",
-      "activity_ids": [11, 12],
-      "activity_names": ["Meeting 11", "Meeting 12"]
+      "participation_type": "Meeting",
+      "participation_ids": [11, 12],
+      "participation_names": ["Meeting 11", "Meeting 12"]
     },
     {
-      "type": "Workshop",
-      "activity_ids": [1],
-      "activity_names": ["Workshop 1"]
+      "participation_type": "Workshop",
+      "participation_ids": [1],
+      "participation_names": ["Workshop 1"]
     },
     {
-      "type": "Boardroom",
-      "activity_ids": [7, 8],
-      "activity_names": ["Boardroom 7", "Boardroom 8"]
+      "participation_type": "Boardroom",
+      "participation_ids": [7, 8],
+      "participation_names": ["Boardroom 7", "Boardroom 8"]
     },
     {
-      "type": "Demo",
-      "activity_ids": [9],
-      "activity_names": ["Demo 9"]
+      "participation_type": "Demo",
+      "participation_ids": [9],
+      "participation_names": ["Demo 9"]
     }
   ]
 }
