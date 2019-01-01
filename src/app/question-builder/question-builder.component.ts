@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Question } from '../models/question.model';
-import { FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { FormJson } from '../models/form-json.model';
 
 @Component({
@@ -10,14 +10,15 @@ import { FormJson } from '../models/form-json.model';
 })
 export class QuestionBuilderComponent implements OnInit {
   @Input() question: Question;
-  @Input() k: number;
   @Input() formControlNames: string[];
   @Input() generatorForm: FormGroup;
   @Input() formJson: FormJson;
 
+  k: number;
+
   constructor() { }
 
   ngOnInit() {
+    this.k = this.formControlNames.indexOf('question' + this.question.id_question);
   }
-
 }

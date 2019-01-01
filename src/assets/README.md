@@ -1,4 +1,4 @@
-#JSON requirements
+# JSON requirements
 
 * Questions must be in order. Avoids having to re-sort them client side
 
@@ -20,7 +20,7 @@
 
 * **id_block=-1** when there's no block (ie. top level question types)
 
-##To check with EC
+## To check with EC
 
 * New **error_message_required** field?
   
@@ -33,3 +33,5 @@
 * New **poll_leave_message** field: message to display when user wants to exit the form before submitting
 
 * How are question **description** and question **label** used?
+
+* Are child questions always dependent on checkbox/dropdown/radio questions? Or can they also depend on text questions? Change **question_dependency_answer** to number, representing the answer index

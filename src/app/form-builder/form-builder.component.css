@@ -1,10 +1,9 @@
 .block {
-  border-left: 1px solid lightslategrey;
-  padding: 10px;
 }
 
 .child-block {
-  border-top: 1px solid lightgrey;
-  border-bottom: 1px solid lightgrey;
-  padding: 10px;
+  padding-left: 25px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-left: 1px solid lightgrey;
 }

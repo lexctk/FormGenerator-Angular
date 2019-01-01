@@ -1,6 +1,6 @@
 <div class="form-group mb-5 mt-2" [formGroup]="generatorForm">
   <label [for]="formControlNames[k]">
-    {{ question.label }} <span class='asterisk' *ngIf="question.mandatory">*</span>
+    <strong>{{ question.number }}.</strong> {{ question.label }} <span class='asterisk' *ngIf="question.mandatory">*</span>
   </label>
 
   <ng-container [ngSwitch]="question.id_answer_type">
@@ -17,7 +17,7 @@
                       [name]="formControlNames[k]"
                       [formControlName]="formControlNames[k]"></textarea>
     </ng-container>
-
+    
     <ng-container *ngSwitchCase="'CheckBoxList'">
       <div class="form-check"
            *ngFor="let answer of question.answers; let i = index"

@@ -13,6 +13,7 @@ import { QuestionBuilderComponent } from './question-builder/question-builder.co
 import { CanDeactivateGuard } from './services/can-component-deactivate.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { RequiredValidatorDirective } from './directives/required-validator.directive';
+import { DependencyBuilderComponent } from './dependency-builder/dependency-builder.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { RequiredValidatorDirective } from './directives/required-validator.dire
     ErrorPageComponent,
     FormBuilderComponent,
     QuestionBuilderComponent,
-    RequiredValidatorDirective
+    RequiredValidatorDirective,
+    DependencyBuilderComponent
   ],
   imports: [
     BrowserModule,

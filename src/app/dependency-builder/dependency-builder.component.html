@@ -1,0 +1,19 @@
+<ng-container *ngIf="question.id_question_dependency === -1">
+  <app-question-builder [question]="question"
+                        [formControlNames]="formControlNames"
+                        [generatorForm]="generatorForm"
+                        [formJson]="formJson">
+  </app-question-builder>
+</ng-container>
+
+<ng-container *ngIf="question.id_question_dependency !== -1">
+  <ng-container *ngIf="showChild()">
+    <ng-container *ngIf="true">
+      <app-question-builder [question]="question"
+                            [formControlNames]="formControlNames"
+                            [generatorForm]="generatorForm"
+                            [formJson]="formJson">
+      </app-question-builder>
+    </ng-container>
+  </ng-container>
+</ng-container>

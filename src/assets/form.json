@@ -30,7 +30,6 @@
           "id_answer_type": "TextBox",
           "id_question_type": "General",
           "id_question_dependency": -1,
-          "question_dependency_answer": "",
           "participant_type": "General Attendee",
           "type_name": "Question"
         },
@@ -49,7 +48,6 @@
           "id_answer_type": "DropDownList",
           "id_question_type": "General",
           "id_question_dependency": -1,
-          "question_dependency_answer": "",
           "participant_type": "General Attendee",
           "answers": [
             {
@@ -85,7 +83,6 @@
           "id_answer_type": "TextBox",
           "id_question_type": "General",
           "id_question_dependency": -1,
-          "question_dependency_answer": "",
           "participant_type": "General Attendee",
           "type_name": "Question"
         },
@@ -93,7 +90,7 @@
           "id_question": 223,
           "id_poll": 21,
           "label": "Block 0: Checkbox question number 223?",
-          "description": "Description text number 223.",
+          "description": "Description text number 223. I have 2 children!",
           "order": 4,
           "max_size": 0,
           "nb_answer": 2,
@@ -104,7 +101,6 @@
           "id_answer_type": "CheckBoxList",
           "id_question_type": "General",
           "id_question_dependency": -1,
-          "question_dependency_answer": "",
           "participant_type": "General Attendee",
           "answers": [
             {
@@ -123,7 +119,7 @@
         {
           "id_question": 224,
           "id_poll": 21,
-          "label": "Block 0: Comment box child question number 224?",
+          "label": "Comment box child question number 224, appears if Question 223 is Answer 0?",
           "description": "Description text number 224.",
           "order": 5,
           "max_size": 2000,
@@ -135,15 +131,15 @@
           "id_answer_type": "CommentsBox",
           "id_question_type": "General",
           "id_question_dependency": 223,
-          "question_dependency_answer": "0",
+          "question_dependency_answer": "A0",
           "participant_type": "General Attendee",
           "type_name": "Question"
         },
         {
           "id_question": 225,
           "id_poll": 21,
-          "label": "Block 0: Dropdown child question number 225?",
-          "description": "Description text number 225.",
+          "label": "Dropdown child question number 225, appears if Question 223 is Answer 1?",
+          "description": "Description text number 225. I have 1 child.",
           "order": 6,
           "max_size": 0,
           "nb_answer": 2,
@@ -154,7 +150,7 @@
           "id_answer_type": "DropDownList",
           "id_question_type": "General",
           "id_question_dependency": 223,
-          "question_dependency_answer": "1",
+          "question_dependency_answer": "A1",
           "participant_type": "General Attendee",
           "answers": [
             {
@@ -173,7 +169,7 @@
         {
           "id_question": 226,
           "id_poll": 21,
-          "label": "Block 0: Comment box child question number 226?",
+          "label": "Comment box child question number 226, appears if question 225 is answer 0?",
           "description": "Description text number 226?",
           "order": 7,
           "max_size": 2000,
@@ -185,7 +181,7 @@
           "id_answer_type": "CommentsBox",
           "id_question_type": "General",
           "id_question_dependency": 225,
-          "question_dependency_answer": "0",
+          "question_dependency_answer": "A0",
           "participant_type": "General Attendee",
           "type_name": "Question"
         },
@@ -193,7 +189,7 @@
           "id_question": 227,
           "id_poll": 21,
           "label": "Radio button question number 227?",
-          "description": "Description text number 227.",
+          "description": "Description text number 227. I have one child.",
           "order": 8,
           "max_size": 0,
           "nb_answer": 3,
@@ -204,7 +200,6 @@
           "id_answer_type": "RadioButtonList",
           "id_question_type": "General",
           "id_question_dependency": -1,
-          "question_dependency_answer": "",
           "participant_type": "General Attendee",
           "answers": [
             {
@@ -228,7 +223,7 @@
         {
           "id_question": 228,
           "id_poll": 21,
-          "label": "Comment box question number 228?",
+          "label": "Comment box child question number 228, appears if question 227 is answer 2?",
           "description": "Description text number 228.",
           "order": 9,
           "max_size": 2000,
@@ -240,7 +235,7 @@
           "id_answer_type": "CommentsBox",
           "id_question_type": "General",
           "id_question_dependency": 227,
-          "question_dependency_answer": "0",
+          "question_dependency_answer": "A2",
           "participant_type": "General Attendee",
           "type_name": "Question"
         }
@@ -271,7 +266,6 @@
           "id_answer_type": "DropDownList",
           "id_question_type": "Activity",
           "id_question_dependency": -1,
-          "question_dependency_answer": "",
           "participant_type": "General Attendee",
           "answers": [
             {
@@ -312,7 +306,6 @@
           "id_answer_type": "CommentsBox",
           "id_question_type": "Meeting",
           "id_question_dependency": -1,
-          "question_dependency_answer": "",
           "participant_type": "General Attendee",
           "type_name": "Question"
         },
@@ -320,7 +313,7 @@
           "id_question": 35,
           "id_poll": 21,
           "label": "Radio button question number 35?",
-          "description": "Description text number 35.",
+          "description": "Description text number 35. I have one child",
           "order": 2,
           "max_size": 0,
           "nb_answer": 3,
@@ -331,7 +324,6 @@
           "id_answer_type": "RadioButtonList",
           "id_question_type": "Meeting",
           "id_question_dependency": -1,
-          "question_dependency_answer": "",
           "participant_type": "General Attendee",
           "answers": [
             {
@@ -355,7 +347,7 @@
         {
           "id_question": 36,
           "id_poll": 21,
-          "label": "Comment box question number 36?",
+          "label": "Comment box child question number 36, appears if question 35 is answer 1?",
           "description": "Description text number 36.",
           "order": 3,
           "max_size": 2000,
@@ -367,14 +359,64 @@
           "id_answer_type": "CommentsBox",
           "id_question_type": "Meeting",
           "id_question_dependency": 35,
-          "question_dependency_answer": "0",
+          "question_dependency_answer": "A1",
           "participant_type": "General Attendee",
           "type_name": "Question"
         }
       ]
     },
     {
-      "type_name": "Workshop"
+      "type_name": "Workshop",
+      "questions": [
+        {
+          "id_question": 100,
+          "id_poll": 21,
+          "label": "Textbox question number 100?",
+          "description": "Description text number 100.",
+          "order": 1,
+          "max_size": 5,
+          "nb_answer": 0,
+          "mandatory": true,
+          "number": "1",
+          "page_number": 1,
+          "id_block": -1,
+          "id_answer_type": "TextBox",
+          "id_question_type": "Workshop",
+          "id_question_dependency": -1,
+          "participant_type": "General Attendee",
+          "type_name": "Question"
+        },
+        {
+          "id_question": 101,
+          "id_poll": 21,
+          "label": "Block 0: Checkbox question number 101?",
+          "description": "Description text number 101.",
+          "order": 1,
+          "max_size": 0,
+          "nb_answer": 2,
+          "mandatory": true,
+          "number": "1",
+          "page_number": 1,
+          "id_block": -1,
+          "id_answer_type": "CheckBoxList",
+          "id_question_type": "Workshop",
+          "id_question_dependency": -1,
+          "participant_type": "General Attendee",
+          "answers": [
+            {
+              "answer_label": "Answer 0",
+              "answer_value": "A0",
+              "type_name": "Answer"
+            },
+            {
+              "answer_label": "Answer 1",
+              "answer_value": "A1",
+              "type_name": "Answer"
+            }
+          ],
+          "type_name": "Question"
+        }
+      ]
     },
     {
       "type_name": "Boardroom"

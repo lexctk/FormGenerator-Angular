@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api/api.service';
 import { Observable, Subscription } from 'rxjs';
-import { FormArray, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormJson } from '../models/form-json.model';
-import { Question } from '../models/question.model';
-import { Block } from '../models/block.model';
 import { CanComponentDeactivate } from '../services/can-component-deactivate.service';
 import { Router } from '@angular/router';
 import { requiredCheckboxValidator } from '../directives/required-validator.directive';
@@ -17,13 +15,8 @@ import { requiredCheckboxValidator } from '../directives/required-validator.dire
 export class FormBuilderComponent implements OnInit, CanComponentDeactivate {
   formJson: FormJson;
   subscription: Subscription;
-
   generatorForm: FormGroup;
-
-  questions: Question[] = [];
-  blocks: Block[] = [];
   formControlNames: string[] = [];
-
   changesSaved = false;
 
   constructor(private router: Router,
@@ -36,7 +29,7 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate {
 
   getJson () {
     this.subscription = this.apiService.getFormJSON().subscribe(
-      (data: FormJson) => this.success(data), (error) => this.failed(error)
+      (data: FormJson) => this.success(data), () => this.failed()
     );
   }
 
@@ -45,8 +38,9 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate {
     this.initForm();
   }
 
-  private failed(error) {
-    this.router.navigate(['/404']);
+  private failed() {
+    // TODO: review 404 page
+    this.router.navigate(['/404']).then();
   }
 
   initForm () {
@@ -60,12 +54,20 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate {
       if (!questionByTypes.questions) {
         break;
       }
-      // each type is a block!
-      this.blocks.push(new Block(-1, questionByTypes.type_name, questionByTypes.type_name));
 
       if (questionByTypes.blocks) {
         for (const block of questionByTypes.blocks) {
-          this.blocks.push(block);
+          block.index_start = -1;
+          block.index_end = -1;
+
+          questionByTypes.questions.forEach((question, index) => {
+            if (question.id_block === block.id_block) {
+              if (block.index_start === -1) {
+                block.index_start = index;
+              }
+              block.index_end = index;
+            }
+          });
         }
       }
 
@@ -73,7 +75,6 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate {
 
         const formControlName = 'question' + question.id_question;
 
-        this.questions.push(question);
         this.formControlNames.push(formControlName);
 
         if (question.id_answer_type !== 'CheckBoxList') {
@@ -89,16 +90,16 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate {
           fieldsControls[formControlName] = new FormControl(null, validators);
         } else {
           // question is a checkbox, use a custom validator and FormArray
-          let answers;
+          let answers = new FormArray([]);
 
           if (question.mandatory) {
             answers = new FormArray([], requiredCheckboxValidator(1));
-          } else {
-            answers = new FormArray([]);
           }
 
           for (const answer of question.answers) {
-            answers.push(new FormControl(null));
+            if (answer) {
+              answers.push(new FormControl(false));
+            }
           }
 
           fieldsControls[formControlName] = answers;
@@ -115,7 +116,7 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate {
       console.log(this.generatorForm.value);
 
       // TODO post to API
-      // this.apiService.postFormJSON(this.generatorForm.value).subscribe();
+      this.apiService.postFormJSON(this.generatorForm.value).subscribe();
     } else {
       // validate all form fields
       Object.keys(this.generatorForm.controls).forEach(field => {
