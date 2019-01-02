@@ -35,3 +35,5 @@
 * How are question **description** and question **label** used?
 
 * Are child questions always dependent on checkbox/dropdown/radio questions? Or can they also depend on text questions? Change **question_dependency_answer** to number, representing the answer index
+
+* What user information do we get when we log in? Is there an API?

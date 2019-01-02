@@ -417,12 +417,6 @@
           "type_name": "Question"
         }
       ]
-    },
-    {
-      "type_name": "Boardroom"
-    },
-    {
-      "type_name": "Demo"
     }
   ]
 }

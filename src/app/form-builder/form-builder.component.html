@@ -5,55 +5,64 @@
   </div>
   <div class="mt-3">
     <form [formGroup]="generatorForm" (ngSubmit)="onSubmit()">
-
       <ng-container *ngFor="let type of formJson.questions_by_types">
         <hr>
         <div class='block my-5'>
-          <h3 class="mb-4">{{ type.type_name }}</h3>
+          <ng-container *ngFor="let p of user.participation">
+            <ng-container *ngIf="p.participation_type === type.type_name">
+              <div *ngFor="let participationName of p.participation_names; let i = index">
 
-          <ng-container *ngIf="type.blocks">
+                <h3 class="mb-4">{{ type.type_name }}: {{ participationName }}</h3>
 
-            <ng-container *ngFor="let question of type.questions; let k = index">
-              <ng-container *ngIf="k < type.blocks[0].index_start">
-                <app-dependency-builder [question]="question"
-                                      [formControlNames]="formControlNames"
-                                      [generatorForm]="generatorForm"
-                                      [formJson]="formJson">
-                </app-dependency-builder>
-              </ng-container>
-            </ng-container>
+                <ng-container *ngIf="type.blocks">
+                  <ng-container *ngFor="let question of type.questions; let k = index">
+                    <ng-container *ngIf="k < type.blocks[0].index_start">
+                      <app-dependency-builder [question]="question"
+                                              [formControlNames]="formControlNames"
+                                              [generatorForm]="generatorForm"
+                                              [formJson]="formJson"
+                                              [participationID]="p.participation_ids[i]">
+                      </app-dependency-builder>
+                    </ng-container>
+                  </ng-container>
 
-            <div class="child-block" *ngFor="let block of type.blocks">
-              <h4 class="mb-4">{{ block.block_name }}</h4>
-              <ng-container *ngFor="let question of type.questions; let k = index">
-                <ng-container *ngIf="block.index_start <= k && k <= block.index_end">
-                  <app-dependency-builder [question]="question"
-                                        [formControlNames]="formControlNames"
-                                        [generatorForm]="generatorForm"
-                                        [formJson]="formJson">
+                  <div class="child-block" *ngFor="let block of type.blocks">
+                    <h4 class="mb-4">{{ block.block_name }}</h4>
+                    <ng-container *ngFor="let question of type.questions; let k = index">
+                      <ng-container *ngIf="block.index_start <= k && k <= block.index_end">
+                        <app-dependency-builder [question]="question"
+                                                [formControlNames]="formControlNames"
+                                                [generatorForm]="generatorForm"
+                                                [formJson]="formJson"
+                                                [participationID]="p.participation_ids[i]">
+                        </app-dependency-builder>
+                      </ng-container>
+                    </ng-container>
+                  </div>
+
+                  <ng-container *ngFor="let question of type.questions; let k = index">
+                    <ng-container *ngIf="type.blocks[type.blocks.length - 1].index_end < k">
+                      <app-dependency-builder [question]="question"
+                                              [formControlNames]="formControlNames"
+                                              [generatorForm]="generatorForm"
+                                              [formJson]="formJson"
+                                              [participationID]="p.participation_ids[i]">
+                      </app-dependency-builder>
+                    </ng-container>
+                  </ng-container>
+
+                </ng-container>
+
+                <ng-container *ngIf="!type.blocks">
+                  <app-dependency-builder *ngFor="let question of type.questions" [question]="question"
+                                          [formControlNames]="formControlNames"
+                                          [generatorForm]="generatorForm"
+                                          [formJson]="formJson"
+                                          [participationID]="p.participation_ids[i]">
                   </app-dependency-builder>
                 </ng-container>
-              </ng-container>
-            </div>
-
-            <ng-container *ngFor="let question of type.questions; let k = index">
-              <ng-container *ngIf="type.blocks[type.blocks.length - 1].index_end < k">
-                <app-dependency-builder [question]="question"
-                                      [formControlNames]="formControlNames"
-                                      [generatorForm]="generatorForm"
-                                      [formJson]="formJson">
-                </app-dependency-builder>
-              </ng-container>
+              </div>
             </ng-container>
-
-          </ng-container>
-
-          <ng-container *ngIf="!type.blocks">
-            <app-dependency-builder *ngFor="let question of type.questions" [question]="question"
-                                  [formControlNames]="formControlNames"
-                                  [generatorForm]="generatorForm"
-                                  [formJson]="formJson">
-            </app-dependency-builder>
           </ng-container>
         </div>
       </ng-container>

@@ -13,6 +13,7 @@ export class DependencyBuilderComponent implements OnInit {
   @Input() formControlNames: string[];
   @Input() generatorForm: FormGroup;
   @Input() formJson: FormJson;
+  @Input() participationID: number;
 
   constructor() { }
 
@@ -20,7 +21,7 @@ export class DependencyBuilderComponent implements OnInit {
   }
 
   showChild() {
-    const formAnswers = this.generatorForm.value['question' + this.question.id_question_dependency];
+    const formAnswers = this.generatorForm.value['participation' + this.participationID + 'question' + this.question.id_question_dependency];
 
     if (!formAnswers) {
       return false;

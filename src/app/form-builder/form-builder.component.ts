@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { requiredCheckboxValidator } from '../directives/required-validator.directive';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user.model';
+import { Question } from '../models/question.model';
 
 @Component({
   selector: 'app-form-builder',
@@ -22,6 +23,8 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnD
 
   userSubscription: Subscription;
   user: User;
+
+  private fieldsControls = {};
 
   constructor(private router: Router,
               private apiService: ApiService,
@@ -52,8 +55,6 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnD
   }
 
   initForm () {
-    const fieldsControls = {};
-
     if (!this.formJson.questions_by_types) {
       return;
     }
@@ -79,43 +80,53 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnD
         }
       }
 
-      for (const question of questionByTypes.questions) {
-
-        const formControlName = 'question' + question.id_question;
-
-        this.formControlNames.push(formControlName);
-
-        if (question.id_answer_type !== 'CheckBoxList') {
-          const validators = [];
-
-          if (question.max_size > 0) {
-            validators.push(Validators.maxLength(question.max_size));
-          }
-
-          if (question.mandatory) {
-            validators.push(Validators.required);
-          }
-          fieldsControls[formControlName] = new FormControl(null, validators);
-        } else {
-          // question is a checkbox, use a custom validator and FormArray
-          let answers = new FormArray([]);
-
-          if (question.mandatory) {
-            answers = new FormArray([], requiredCheckboxValidator(1));
-          }
-
-          for (const answer of question.answers) {
-            if (answer) {
-              answers.push(new FormControl(false));
-            }
-          }
-
-          fieldsControls[formControlName] = answers;
+      for (const p of this.user.participation) {
+        if (questionByTypes.type_name === p.participation_type) {
+          p.participation_ids.forEach((participationId, index) => {
+            this.initQuestions (participationId, questionByTypes.questions);
+          });
         }
       }
     }
 
-    this.generatorForm = new FormGroup(fieldsControls);
+    this.generatorForm = new FormGroup(this.fieldsControls);
+  }
+
+  initQuestions(participationId: number, questions: Question[]) {
+
+    for (const question of questions) {
+      const formControlName = 'participation' + participationId + 'question' + question.id_question;
+
+      this.formControlNames.push(formControlName);
+
+      if (question.id_answer_type !== 'CheckBoxList') {
+        const validators = [];
+
+        if (question.max_size > 0) {
+          validators.push(Validators.maxLength(question.max_size));
+        }
+
+        if (question.mandatory) {
+          validators.push(Validators.required);
+        }
+        this.fieldsControls[formControlName] = new FormControl(null, validators);
+      } else {
+        // question is a checkbox, use a custom validator and FormArray
+        let answers = new FormArray([]);
+
+        if (question.mandatory) {
+          answers = new FormArray([], requiredCheckboxValidator(1));
+        }
+
+        for (const answer of question.answers) {
+          if (answer) {
+            answers.push(new FormControl(false));
+          }
+        }
+
+        this.fieldsControls[formControlName] = answers;
+      }
+    }
   }
 
   onSubmit() {

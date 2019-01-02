@@ -13,12 +13,13 @@ export class QuestionBuilderComponent implements OnInit {
   @Input() formControlNames: string[];
   @Input() generatorForm: FormGroup;
   @Input() formJson: FormJson;
+  @Input() participationID: number;
 
   k: number;
 
   constructor() { }
 
   ngOnInit() {
-    this.k = this.formControlNames.indexOf('question' + this.question.id_question);
+    this.k = this.formControlNames.indexOf('participation' + this.participationID + 'question' + this.question.id_question);
   }
 }
