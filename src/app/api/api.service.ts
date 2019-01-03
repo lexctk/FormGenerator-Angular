@@ -3,8 +3,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { FormJson } from '../models/form-json.model';
-import { FormGroup } from '@angular/forms';
 import { User } from '../models/user.model';
+import { Data } from '../models/data.model';
 
 @Injectable({
   providedIn: 'root'
@@ -38,8 +38,8 @@ export class ApiService {
       .pipe(catchError(ApiService.handleError));
   }
 
-  postFormJson(answers: FormGroup) {
-    return this.http.post<FormGroup>(this.postURL, answers)
+  postFormJson(data: Data) {
+    return this.http.post<Data>(this.postURL, data)
       .pipe(catchError(ApiService.handleError));
   }
 

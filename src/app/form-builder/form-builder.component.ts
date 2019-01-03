@@ -9,6 +9,7 @@ import { requiredCheckboxValidator } from '../directives/required-validator.dire
 import { UserService } from '../services/user.service';
 import { User } from '../models/user.model';
 import { Question } from '../models/question.model';
+import { JsonFormatService } from '../services/json-format.service';
 
 @Component({
   selector: 'app-form-builder',
@@ -28,7 +29,8 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnD
 
   constructor(private router: Router,
               private apiService: ApiService,
-              private userService: UserService) {
+              private userService: UserService,
+              private jsonFormatService: JsonFormatService) {
   }
 
   ngOnInit() {
@@ -54,7 +56,7 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnD
     this.router.navigate(['/404']).then();
   }
 
-  initForm () {
+  private initForm () {
     if (!this.formJson.questions_by_types) {
       return;
     }
@@ -80,11 +82,11 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnD
         }
       }
 
-      for (const p of this.user.participation) {
-        if (questionByTypes.type_name === p.participation_type) {
-          p.participation_ids.forEach((participationId, index) => {
-            this.initQuestions (participationId, questionByTypes.questions);
-          });
+      for (const a of this.user.activity) {
+        if (questionByTypes.type_name === a.activity_type) {
+          for (const activityID of a.activity_ids) {
+            this.initQuestions (activityID, questionByTypes.questions);
+          }
         }
       }
     }
@@ -92,10 +94,14 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnD
     this.generatorForm = new FormGroup(this.fieldsControls);
   }
 
-  initQuestions(participationId: number, questions: Question[]) {
+  private initQuestions(activityID: number, questions: Question[]) {
 
     for (const question of questions) {
-      const formControlName = 'participation' + participationId + 'question' + question.id_question;
+      const formControlName = this.jsonFormatService.getFormControlName(
+        this.formJson.id_poll,
+        activityID,
+        question.id_question,
+        question.id_question_type);
 
       this.formControlNames.push(formControlName);
 
@@ -120,7 +126,7 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnD
 
         for (const answer of question.answers) {
           if (answer) {
-            answers.push(new FormControl(false));
+            answers.push(new FormControl(null));
           }
         }
 
@@ -130,18 +136,24 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnD
   }
 
   onSubmit() {
-    if (this.generatorForm.valid) {
+    let valid = true;
+
+    Object.keys(this.generatorForm.controls).forEach(field => {
+
+      const control = this.generatorForm.get(field);
+      if (!control.valid && !!document.getElementById(field)) {
+        valid = false;
+      }
+      control.markAsTouched({ onlySelf: true });
+    });
+
+    if (valid) {
       this.changesSaved = true;
-      console.log(this.generatorForm.value);
 
       // TODO post to API
-      this.apiService.postFormJson(this.generatorForm.value).subscribe();
-    } else {
-      // validate all form fields
-      Object.keys(this.generatorForm.controls).forEach(field => {
-        const control = this.generatorForm.get(field);
-        control.markAsTouched({ onlySelf: true });
-      });
+      const data = this.jsonFormatService.getReplyFromForm(this.generatorForm.value);
+      console.log(data);
+      // this.apiService.postFormJson(data).subscribe();
     }
   }
 
@@ -155,5 +167,9 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnD
 
   ngOnDestroy(): void {
     this.userSubscription.unsubscribe();
+  }
+
+  isParticipant(typeName: string): boolean {
+    return this.user.activity.map(activity => activity.activity_type).indexOf(typeName) > -1;
   }
 }

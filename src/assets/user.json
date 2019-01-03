@@ -2,26 +2,26 @@
   "user_id": 1,
   "username": "Lex",
   "id_event": 1,
-  "participation": [
+  "activity": [
     {
-      "participation_type": "General",
-      "participation_ids": [1],
-      "participation_names": ["Event"]
+      "activity_type": "General",
+      "activity_ids": [1],
+      "activity_names": [""]
     },
     {
-      "participation_type": "Activity",
-      "participation_ids": [2, 3, 4],
-      "participation_names": ["Activity 1", "Activity 3", "Activity 5"]
+      "activity_type": "Activity",
+      "activity_ids": [2, 3, 4],
+      "activity_names": ["Activity 1", "Activity 3", "Activity 5"]
     },
     {
-      "participation_type": "Meeting",
-      "participation_ids": [5, 6],
-      "participation_names": ["Meeting 2", "Meeting 6"]
+      "activity_type": "Meeting",
+      "activity_ids": [5, 6],
+      "activity_names": ["Meeting 2", "Meeting 6"]
     },
     {
-      "participation_type": "Workshop",
-      "participation_ids": [7],
-      "participation_names": ["Workshop 7"]
+      "activity_type": "Workshop",
+      "activity_ids": [7],
+      "activity_names": ["Workshop 7"]
     }
   ]
 }

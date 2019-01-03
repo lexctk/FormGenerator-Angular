@@ -26,7 +26,7 @@
                [id]="formControlNames[k] + answer.answer_value"
                [name]="formControlNames[k]"
                [value]="answer.answer_value"
-               [formControlName]="i">
+               [formControlName]="i" (change)="onChange(formControlNames[k], question.answers)">
         <label class="form-check-label"
                [for]="formControlNames[k] + answer.answer_value">
           {{ answer.answer_label }}

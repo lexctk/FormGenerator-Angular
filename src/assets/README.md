@@ -20,7 +20,13 @@
 
 * **id_block=-1** when there's no block (ie. top level question types)
 
+* New **type_id** field for questions_by_types
+
+* **id_question_type** field is a number and unique
+
 ## To check with EC
+
+* is **id_question** always unique across different types?
 
 * New **error_message_required** field?
   
@@ -37,3 +43,5 @@
 * Are child questions always dependent on checkbox/dropdown/radio questions? Or can they also depend on text questions? Change **question_dependency_answer** to number, representing the answer index
 
 * What user information do we get when we log in? Is there an API?
+
+* What does mandatory mean for checkboxes? Minimum one value checked?

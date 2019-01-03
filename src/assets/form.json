@@ -14,6 +14,7 @@
   "questions_by_types": [
     {
       "type_name": "General",
+      "type_id": 0,
       "questions": [
         {
           "id_question": 220,
@@ -28,7 +29,7 @@
           "page_number": 1,
           "id_block": -1,
           "id_answer_type": "TextBox",
-          "id_question_type": "General",
+          "id_question_type": 0,
           "id_question_dependency": -1,
           "participant_type": "General Attendee",
           "type_name": "Question"
@@ -46,7 +47,7 @@
           "page_number": 1,
           "id_block": -1,
           "id_answer_type": "DropDownList",
-          "id_question_type": "General",
+          "id_question_type": 0,
           "id_question_dependency": -1,
           "participant_type": "General Attendee",
           "answers": [
@@ -81,7 +82,7 @@
           "page_number": 1,
           "id_block": 26,
           "id_answer_type": "TextBox",
-          "id_question_type": "General",
+          "id_question_type": 0,
           "id_question_dependency": -1,
           "participant_type": "General Attendee",
           "type_name": "Question"
@@ -99,7 +100,7 @@
           "page_number": 1,
           "id_block": 26,
           "id_answer_type": "CheckBoxList",
-          "id_question_type": "General",
+          "id_question_type": 0,
           "id_question_dependency": -1,
           "participant_type": "General Attendee",
           "answers": [
@@ -129,7 +130,7 @@
           "page_number": 1,
           "id_block": 26,
           "id_answer_type": "CommentsBox",
-          "id_question_type": "General",
+          "id_question_type": 0,
           "id_question_dependency": 223,
           "question_dependency_answer": "A0",
           "participant_type": "General Attendee",
@@ -148,7 +149,7 @@
           "page_number": 1,
           "id_block": 26,
           "id_answer_type": "DropDownList",
-          "id_question_type": "General",
+          "id_question_type": 0,
           "id_question_dependency": 223,
           "question_dependency_answer": "A1",
           "participant_type": "General Attendee",
@@ -179,7 +180,7 @@
           "page_number": 1,
           "id_block": 26,
           "id_answer_type": "CommentsBox",
-          "id_question_type": "General",
+          "id_question_type": 0,
           "id_question_dependency": 225,
           "question_dependency_answer": "A0",
           "participant_type": "General Attendee",
@@ -198,7 +199,7 @@
           "page_number": 1,
           "id_block": -1,
           "id_answer_type": "RadioButtonList",
-          "id_question_type": "General",
+          "id_question_type": 0,
           "id_question_dependency": -1,
           "participant_type": "General Attendee",
           "answers": [
@@ -233,7 +234,7 @@
           "page_number": 1,
           "id_block": -1,
           "id_answer_type": "CommentsBox",
-          "id_question_type": "General",
+          "id_question_type": 0,
           "id_question_dependency": 227,
           "question_dependency_answer": "A2",
           "participant_type": "General Attendee",
@@ -250,6 +251,7 @@
     },
     {
       "type_name": "Activity",
+      "type_id": 1,
       "questions": [
         {
           "id_question": 229,
@@ -264,7 +266,7 @@
           "page_number": 1,
           "id_block": -1,
           "id_answer_type": "DropDownList",
-          "id_question_type": "Activity",
+          "id_question_type": 1,
           "id_question_dependency": -1,
           "participant_type": "General Attendee",
           "answers": [
@@ -290,6 +292,7 @@
     },
     {
       "type_name": "Meeting",
+      "type_id": 2,
       "questions": [
         {
           "id_question": 34,
@@ -304,7 +307,7 @@
           "page_number": 1,
           "id_block": -1,
           "id_answer_type": "CommentsBox",
-          "id_question_type": "Meeting",
+          "id_question_type": 2,
           "id_question_dependency": -1,
           "participant_type": "General Attendee",
           "type_name": "Question"
@@ -322,7 +325,7 @@
           "page_number": 1,
           "id_block": -1,
           "id_answer_type": "RadioButtonList",
-          "id_question_type": "Meeting",
+          "id_question_type": 2,
           "id_question_dependency": -1,
           "participant_type": "General Attendee",
           "answers": [
@@ -357,7 +360,7 @@
           "page_number": 1,
           "id_block": -1,
           "id_answer_type": "CommentsBox",
-          "id_question_type": "Meeting",
+          "id_question_type": 2,
           "id_question_dependency": 35,
           "question_dependency_answer": "A1",
           "participant_type": "General Attendee",
@@ -367,6 +370,7 @@
     },
     {
       "type_name": "Workshop",
+      "type_id": 3,
       "questions": [
         {
           "id_question": 100,
@@ -381,7 +385,7 @@
           "page_number": 1,
           "id_block": -1,
           "id_answer_type": "TextBox",
-          "id_question_type": "Workshop",
+          "id_question_type": 3,
           "id_question_dependency": -1,
           "participant_type": "General Attendee",
           "type_name": "Question"
@@ -395,11 +399,11 @@
           "max_size": 0,
           "nb_answer": 2,
           "mandatory": true,
-          "number": "1",
+          "number": "2",
           "page_number": 1,
           "id_block": -1,
           "id_answer_type": "CheckBoxList",
-          "id_question_type": "Workshop",
+          "id_question_type": 3,
           "id_question_dependency": -1,
           "participant_type": "General Attendee",
           "answers": [
@@ -414,6 +418,54 @@
               "type_name": "Answer"
             }
           ],
+          "type_name": "Question"
+        }
+      ]
+    },
+    {
+      "type_name": "Boardroom",
+      "type_id": 4,
+      "questions": [
+        {
+          "id_question": 50,
+          "id_poll": 21,
+          "label": "Textbox question number 50?",
+          "description": "Description text number 50.",
+          "order": 1,
+          "max_size": 5,
+          "nb_answer": 0,
+          "mandatory": true,
+          "number": "1",
+          "page_number": 1,
+          "id_block": -1,
+          "id_answer_type": "TextBox",
+          "id_question_type": 4,
+          "id_question_dependency": -1,
+          "participant_type": "General Attendee",
+          "type_name": "Question"
+        }
+      ]
+    },
+    {
+      "type_name": "Demo",
+      "type_id": 5,
+      "questions": [
+        {
+          "id_question": 1,
+          "id_poll": 21,
+          "label": "Textbox question number 1?",
+          "description": "Description text number 1.",
+          "order": 1,
+          "max_size": 5,
+          "nb_answer": 0,
+          "mandatory": true,
+          "number": "1",
+          "page_number": 1,
+          "id_block": -1,
+          "id_answer_type": "TextBox",
+          "id_question_type": 5,
+          "id_question_dependency": -1,
+          "participant_type": "General Attendee",
           "type_name": "Question"
         }
       ]
