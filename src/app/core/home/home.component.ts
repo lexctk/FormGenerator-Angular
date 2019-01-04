@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthService } from '../authentication/auth.service';
+import { AuthService } from '../../authentication/auth.service';
 
 @Component({
   selector: 'app-home',
