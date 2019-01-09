@@ -1,0 +1,27 @@
+{
+  "user_id": 1,
+  "username": "Lex",
+  "id_event": 1,
+  "activity": [
+    {
+      "activity_type": "General",
+      "activity_ids": [1],
+      "activity_names": [""]
+    },
+    {
+      "activity_type": "Activity",
+      "activity_ids": [2, 3, 4],
+      "activity_names": ["Activity 1", "Activity 3", "Activity 5"]
+    },
+    {
+      "activity_type": "Meeting",
+      "activity_ids": [5, 6],
+      "activity_names": ["Meeting 2", "Meeting 6"]
+    },
+    {
+      "activity_type": "Workshop",
+      "activity_ids": [7],
+      "activity_names": ["Workshop 7"]
+    }
+  ]
+}
