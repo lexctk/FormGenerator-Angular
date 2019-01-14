@@ -6,14 +6,14 @@
   "name": "Poll Name",
   "description": "Poll Description",
   "external_id": "ID",
-  "type_name": "Poll",
+  "type": "Poll",
   "number_of_pages": 3,
   "error_message_required": "Answer is required",
   "error_message_max_size": "Answer max length is ",
   "poll_leave_message": "Do you want to discard the changes?",
   "questions_by_types": [
     {
-      "type_name": "General",
+      "type": "General",
       "type_id": 0,
       "questions": [
         {
@@ -32,7 +32,7 @@
           "id_question_type": 0,
           "id_question_dependency": -1,
           "participant_type": "General Attendee",
-          "type_name": "Question"
+          "type": "Question"
         },
         {
           "id_question": 221,
@@ -54,20 +54,20 @@
             {
               "answer_label": "Answer 1",
               "answer_value": "A1",
-              "type_name": "Answer"
+              "type": "Answer"
             },
             {
               "answer_label": "Answer 2",
               "answer_value": "A2",
-              "type_name": "Answer"
+              "type": "Answer"
             },
             {
               "answer_label": "Answer 3",
               "answer_value": "A3",
-              "type_name": "Answer"
+              "type": "Answer"
             }
           ],
-          "type_name": "Question"
+          "type": "Question"
         },
         {
           "id_question": 222,
@@ -85,7 +85,7 @@
           "id_question_type": 0,
           "id_question_dependency": -1,
           "participant_type": "General Attendee",
-          "type_name": "Question"
+          "type": "Question"
         },
         {
           "id_question": 223,
@@ -107,15 +107,15 @@
             {
               "answer_label": "Answer 0",
               "answer_value": "A0",
-              "type_name": "Answer"
+              "type": "Answer"
             },
             {
               "answer_label": "Answer 1",
               "answer_value": "A1",
-              "type_name": "Answer"
+              "type": "Answer"
             }
           ],
-          "type_name": "Question"
+          "type": "Question"
         },
         {
           "id_question": 224,
@@ -134,7 +134,7 @@
           "id_question_dependency": 223,
           "question_dependency_answer": "A0",
           "participant_type": "General Attendee",
-          "type_name": "Question"
+          "type": "Question"
         },
         {
           "id_question": 225,
@@ -157,15 +157,15 @@
             {
               "answer_label": "Answer 0",
               "answer_value": "A0",
-              "type_name": "Answer"
+              "type": "Answer"
             },
             {
               "answer_label": "Answer 1",
               "answer_value": "A1",
-              "type_name": "Answer"
+              "type": "Answer"
             }
           ],
-          "type_name": "Question"
+          "type": "Question"
         },
         {
           "id_question": 226,
@@ -184,7 +184,7 @@
           "id_question_dependency": 225,
           "question_dependency_answer": "A0",
           "participant_type": "General Attendee",
-          "type_name": "Question"
+          "type": "Question"
         },
         {
           "id_question": 227,
@@ -206,20 +206,20 @@
             {
               "answer_label": "Answer 0",
               "answer_value": "A0",
-              "type_name": "Answer"
+              "type": "Answer"
             },
             {
               "answer_label": "Answer 1",
               "answer_value": "A1",
-              "type_name": "Answer"
+              "type": "Answer"
             },
             {
               "answer_label": "Answer 2",
               "answer_value": "A2",
-              "type_name": "Answer"
+              "type": "Answer"
             }
           ],
-          "type_name": "Question"
+          "type": "Question"
         },
         {
           "id_question": 228,
@@ -238,19 +238,19 @@
           "id_question_dependency": 227,
           "question_dependency_answer": "A2",
           "participant_type": "General Attendee",
-          "type_name": "Question"
+          "type": "Question"
         }
       ],
       "blocks": [
         {
           "id_block": 26,
           "block_name": "Block 0",
-          "type_name": "Block"
+          "type": "Block"
         }
       ]
     },
     {
-      "type_name": "Activity",
+      "type": "Activity",
       "type_id": 1,
       "questions": [
         {
@@ -273,25 +273,25 @@
             {
               "answer_label": "Answer 0",
               "answer_value": "A0",
-              "type_name": "Answer"
+              "type": "Answer"
             },
             {
               "answer_label": "Answer 1",
               "answer_value": "A1",
-              "type_name": "Answer"
+              "type": "Answer"
             },
             {
               "answer_label": "Answer 2",
               "answer_value": "A2",
-              "type_name": "Answer"
+              "type": "Answer"
             }
           ],
-          "type_name": "Question"
+          "type": "Question"
         }
       ]
     },
     {
-      "type_name": "Meeting",
+      "type": "Meeting",
       "type_id": 2,
       "questions": [
         {
@@ -310,7 +310,7 @@
           "id_question_type": 2,
           "id_question_dependency": -1,
           "participant_type": "General Attendee",
-          "type_name": "Question"
+          "type": "Question"
         },
         {
           "id_question": 35,
@@ -332,20 +332,20 @@
             {
               "answer_label": "Answer 0",
               "answer_value": "A0",
-              "type_name": "Answer"
+              "type": "Answer"
             },
             {
               "answer_label": "Answer 1",
               "answer_value": "A1",
-              "type_name": "Answer"
+              "type": "Answer"
             },
             {
               "answer_label": "Answer 2",
               "answer_value": "A2",
-              "type_name": "Answer"
+              "type": "Answer"
             }
           ],
-          "type_name": "Question"
+          "type": "Question"
         },
         {
           "id_question": 36,
@@ -364,12 +364,12 @@
           "id_question_dependency": 35,
           "question_dependency_answer": "A1",
           "participant_type": "General Attendee",
-          "type_name": "Question"
+          "type": "Question"
         }
       ]
     },
     {
-      "type_name": "Workshop",
+      "type": "Workshop",
       "type_id": 3,
       "questions": [
         {
@@ -388,7 +388,7 @@
           "id_question_type": 3,
           "id_question_dependency": -1,
           "participant_type": "General Attendee",
-          "type_name": "Question"
+          "type": "Question"
         },
         {
           "id_question": 101,
@@ -410,20 +410,20 @@
             {
               "answer_label": "Answer 0",
               "answer_value": "A0",
-              "type_name": "Answer"
+              "type": "Answer"
             },
             {
               "answer_label": "Answer 1",
               "answer_value": "A1",
-              "type_name": "Answer"
+              "type": "Answer"
             }
           ],
-          "type_name": "Question"
+          "type": "Question"
         }
       ]
     },
     {
-      "type_name": "Boardroom",
+      "type": "Boardroom",
       "type_id": 4,
       "questions": [
         {
@@ -442,12 +442,12 @@
           "id_question_type": 4,
           "id_question_dependency": -1,
           "participant_type": "General Attendee",
-          "type_name": "Question"
+          "type": "Question"
         }
       ]
     },
     {
-      "type_name": "Demo",
+      "type": "Demo",
       "type_id": 5,
       "questions": [
         {
@@ -466,7 +466,7 @@
           "id_question_type": 5,
           "id_question_dependency": -1,
           "participant_type": "General Attendee",
-          "type_name": "Question"
+          "type": "Question"
         }
       ]
     }

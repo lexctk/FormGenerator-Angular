@@ -68,7 +68,7 @@ export class PageBuilderComponent implements OnInit, CanComponentDeactivate, OnD
 
     for (const questionByTypes of this.formJson.questions_by_types) {
       for (const activity of this.user.activity) {
-        if (activity.activity_type === questionByTypes.type_name) {
+        if (activity.activity_type === questionByTypes.type) {
           this.numberOfPages++;
           break;
         }
@@ -104,7 +104,7 @@ export class PageBuilderComponent implements OnInit, CanComponentDeactivate, OnD
       }
 
       for (const a of this.user.activity) {
-        if (questionByTypes.type_name === a.activity_type) {
+        if (questionByTypes.type === a.activity_type) {
           for (const activityID of a.activity_ids) {
             this.initQuestions (activityID, questionByTypes.questions);
           }
