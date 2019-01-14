@@ -13,13 +13,14 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  apiURL = 'assets/form.json';
+  apiURL = 'https://ecsurvey2019app.azurewebsites.net/api/polldev/34';
 
   // TODO: define POST url
   postURL = 'postURL';
 
   userApiURL = 'assets/user.json';
 
+  // TODO: change error for response: text
   private static handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.error('Client-side or network error occurred:', error.error.message);
@@ -31,7 +32,7 @@ export class ApiService {
   }
 
   getFormJson() {
-    return this.http.get<FormJson>(this.apiURL)
+    return this.http.get(this.apiURL, {responseType: 'text'})
       .pipe(catchError(ApiService.handleError));
   }
 

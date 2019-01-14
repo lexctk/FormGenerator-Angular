@@ -45,12 +45,14 @@ export class PageBuilderComponent implements OnInit, CanComponentDeactivate, OnD
 
   getJson () {
     this.apiService.getFormJson().subscribe(
-      (data: FormJson) => this.success(data), () => this.failed()
+      (data: string) => this.success(data), () => this.failed()
     );
   }
 
-  private success(data: FormJson) {
-    this.formJson = data;
+  private success(data: string) {
+    data = data.slice(1, data.length - 1);
+    data = data.replace(/\\/g, '');
+    this.formJson = <FormJson>JSON.parse(data);
     this.countPages();
     this.initForm();
   }

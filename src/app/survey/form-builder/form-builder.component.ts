@@ -42,9 +42,7 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnD
   }
 
   getJson () {
-    this.apiService.getFormJson().subscribe(
-      (data: FormJson) => this.success(data), () => this.failed()
-    );
+
   }
 
   private success(data: FormJson) {
