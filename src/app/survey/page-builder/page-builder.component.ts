@@ -174,7 +174,7 @@ export class PageBuilderComponent implements OnInit, CanComponentDeactivate, OnD
       // TODO post to API
       const data = this.jsonFormatService.getReplyFromForm(this.generatorForm.value);
       console.log(data);
-      // this.apiService.postFormJson(data).subscribe();
+      this.apiService.postFormJson(data).subscribe();
     }
   }
 

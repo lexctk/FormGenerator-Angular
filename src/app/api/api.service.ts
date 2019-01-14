@@ -13,10 +13,9 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  apiURL = 'https://ecsurvey2019app.azurewebsites.net/api/polldev/34';
+  apiURL = 'https://ecsurvey2019app.azurewebsites.net/api/polldev/35';
 
-  // TODO: define POST url
-  postURL = 'postURL';
+  postURL = 'http://blabla.net/api/angularapp';
 
   userApiURL = 'assets/user.json';
 
