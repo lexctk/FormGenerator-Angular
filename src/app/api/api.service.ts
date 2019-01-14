@@ -15,7 +15,7 @@ export class ApiService {
 
   apiURL = 'https://ecsurvey2019app.azurewebsites.net/api/polldev/35';
 
-  postURL = 'http://blabla.net/api/angularapp';
+  postURL = 'https://ecsurvey2019app.azurewebsites.net/api/angularapp';
 
   userApiURL = 'assets/user.json';
 
