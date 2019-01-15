@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CanDeactivateGuard } from './services/can-component-deactivate.service';
 import { PageBuilderComponent } from './page-builder/page-builder.component';
+import { SurveyRoutingModule } from './survey-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PageBuilderComponent } from './page-builder/page-builder.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    SurveyRoutingModule
   ],
   providers: [CanDeactivateGuard],
 })

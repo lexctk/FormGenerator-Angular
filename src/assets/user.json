@@ -1,12 +1,12 @@
 {
-  "user_id": 1,
-  "username": "Lex",
-  "id_event": 1,
+  "user_id": 2,
+  "username": "Alex",
+  "id_event": 35,
   "activity": [
     {
       "activity_type": "General",
-      "activity_ids": [1],
-      "activity_names": [""]
+      "activity_ids": [0],
+      "activity_names": ["General"]
     },
     {
       "activity_type": "Activity",
@@ -22,6 +22,22 @@
       "activity_type": "Workshop",
       "activity_ids": [7],
       "activity_names": ["Workshop 7"]
+    },
+    {
+      "activity_type": "Boardroom",
+      "activity_ids": [4],
+      "activity_names": ["Boardroom 4"]
+    },
+    {
+      "activity_type": "Demo",
+      "activity_ids": [1],
+      "activity_names": ["Demo 1"]
+    },
+    {
+      "activity_type": "Session",
+      "activity_ids": [5, 6],
+      "activity_names": ["Session 5", "Session 6"]
     }
+
   ]
 }

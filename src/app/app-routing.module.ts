@@ -1,17 +1,14 @@
-import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './core/home/home.component';
-import { AuthGuardService } from './authentication/auth-guard.service';
-import { CanDeactivateGuard } from './survey/services/can-component-deactivate.service';
 import { ErrorPageComponent } from './core/error-page/error-page.component';
-import { FormBuilderComponent } from './survey/form-builder/form-builder.component';
-import { PageBuilderComponent } from './survey/page-builder/page-builder.component';
+import { ThankYouPageComponent } from './core/thank-you-page/thank-you-page.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'survey', canActivate: [AuthGuardService], component: PageBuilderComponent, canDeactivate: [CanDeactivateGuard]},
   {path: '404', component: ErrorPageComponent},
+  {path: 'thank-you', component: ThankYouPageComponent},
   {path: '**', redirectTo: '/404'}
 ];
 

@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   onLoadSurvey() {
-    this.router.navigate(['/survey']).then();
+    this.router.navigate(['/survey/0']).then();
   }
 
   onLogin() {

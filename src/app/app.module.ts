@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SurveyModule } from './survey/survey.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SurveyModule } from './survey/survey.module';
     BrowserModule,
     HttpClientModule,
     SurveyModule,
-    CoreModule
+    CoreModule,
+    AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })

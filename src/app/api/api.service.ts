@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { FormJson } from '../survey/models/form-json.model';
@@ -36,7 +36,12 @@ export class ApiService {
   }
 
   postFormJson(data: Data) {
-    return this.http.post<Data>(this.postURL, data)
+    const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+
+    let stringData = JSON.stringify(data);
+    stringData = '=' + stringData;
+    console.log(stringData);
+    return this.http.post(this.postURL, stringData, { headers, responseType: 'text'})
       .pipe(catchError(ApiService.handleError));
   }
 
