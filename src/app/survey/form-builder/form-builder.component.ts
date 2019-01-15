@@ -21,7 +21,7 @@ import { Activity } from '../models/activity.model';
 })
 export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnDestroy {
   generatorForm: FormGroup;
-  formControlNames: string[] = [];
+  formControlNames: string[];
   changesSaved = false;
 
   numberOfPagesSubscription: Subscription;
@@ -39,7 +39,7 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnD
 
   buttonText: string;
 
-  private fieldsControls = {};
+  private fieldsControls;
 
   constructor(private router: Router,
               private apiService: ApiService,
@@ -74,8 +74,10 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnD
         this.buttonText = 'Submit';
       }
 
+      this.formControlNames = [];
+      this.fieldsControls = {};
+
       this.initForm();
-      console.log(this.currentPage + ' ' + this.numberOfPages);
     });
   }
 
@@ -187,6 +189,8 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnD
 
       const data = this.jsonFormatService.getReplyFromForm(this.generatorForm.value);
       this.apiService.postFormJson(data).subscribe();
+
+      console.log(data);
 
       if (this.currentPage < this.numberOfPages - 1) {
         this.currentPage++;
