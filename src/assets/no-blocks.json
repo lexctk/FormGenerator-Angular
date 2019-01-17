@@ -1,0 +1,167 @@
+={
+  "id_poll": 49,
+  "id_event": 1,
+  "start_date": "2019-01-01T00:00:00",
+  "end_date": "2019-01-31T00:00:00",
+  "name": "Sondage de tests de type participants",
+  "description": "",
+  "external_id": "TESTTYPEPARTICIPANTIDEXT",
+  "number_of_pages": 1,
+  "questions_by_types": [
+    {
+      "type": "General",
+      "type_id": 1,
+      "blocks": [
+
+      ],
+      "questions": [
+        {
+          "id_question": 454,
+          "id_poll": 49,
+          "label": "q1all",
+          "description": "",
+          "order": 1,
+          "max_size": 0,
+          "nb_answer": 2,
+          "mandatory": true,
+          "number": "1",
+          "page_number": 1,
+          "id_block": -1,
+          "id_answer_type": "DropDownList",
+          "id_question_type": 1,
+          "id_question_dependency": -1,
+          "question_dependency_answer": "",
+          "participant_type": 3,
+          "answers": [
+            {
+              "answer_label": "0",
+              "answer_value": "0",
+              "type": "Answer"
+            },
+            {
+              "answer_label": "1",
+              "answer_value": "1",
+              "type": "Answer"
+            }
+          ],
+          "type": "Question"
+        },
+        {
+          "id_question": 455,
+          "id_poll": 49,
+          "label": "qd1all",
+          "description": "",
+          "order": 2,
+          "max_size": 200,
+          "nb_answer": 0,
+          "mandatory": true,
+          "number": "1.1",
+          "page_number": 1,
+          "id_block": -1,
+          "id_answer_type": "TextBox",
+          "id_question_type": 1,
+          "id_question_dependency": 454,
+          "question_dependency_answer": "0",
+          "participant_type": 3,
+          "type": "Question"
+        },
+        {
+          "id_question": 456,
+          "id_poll": 49,
+          "label": "q1ga",
+          "description": "",
+          "order": 3,
+          "max_size": 0,
+          "nb_answer": 2,
+          "mandatory": true,
+          "number": "2",
+          "page_number": 1,
+          "id_block": -1,
+          "id_answer_type": "RadioButtonList",
+          "id_question_type": 1,
+          "id_question_dependency": -1,
+          "question_dependency_answer": "",
+          "participant_type": 3,
+          "answers": [
+            {
+              "answer_label": "0",
+              "answer_value": "0",
+              "type": "Answer"
+            },
+            {
+              "answer_label": "1",
+              "answer_value": "1",
+              "type": "Answer"
+            }
+          ],
+          "type": "Question"
+        },
+        {
+          "id_question": 457,
+          "id_poll": 49,
+          "label": "qd1ga",
+          "description": "",
+          "order": 4,
+          "max_size": 2000,
+          "nb_answer": 0,
+          "mandatory": true,
+          "number": "2.1",
+          "page_number": 1,
+          "id_block": -1,
+          "id_answer_type": "TextBox",
+          "id_question_type": 1,
+          "id_question_dependency": 456,
+          "question_dependency_answer": "0",
+          "participant_type": 3,
+          "type": "Question"
+        }
+      ]
+    },
+    {
+      "type": "Activity",
+      "type_id": 2,
+      "questions": [
+
+      ]
+    },
+    {
+      "type": "Meeting",
+      "type_id": 3,
+      "questions": [
+
+      ]
+    },
+    {
+      "type": "Workshop",
+      "type_id": 4,
+      "questions": [
+
+      ]
+    },
+    {
+      "type": "Boardroom",
+      "type_id": 5,
+      "questions": [
+
+      ]
+    },
+    {
+      "type": "Demo",
+      "type_id": 6,
+      "questions": [
+
+      ]
+    },
+    {
+      "type": "Session",
+      "type_id": 7,
+      "questions": [
+
+      ]
+    }
+  ],
+  "type": "Poll",
+  "error_message_required": "Answer is required",
+  "error_message_max_size": "Answer max length is",
+  "poll_leave_message": "Do you want to discard the changes ?"
+}

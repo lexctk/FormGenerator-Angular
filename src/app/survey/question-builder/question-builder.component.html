@@ -1,7 +1,11 @@
 <div class="form-group mb-5 mt-2" [formGroup]="generatorForm">
-  <label [for]="formControlNames[k]">
+  <label class="question-label" [for]="formControlNames[k]">
     <strong>{{ question.number }}.</strong> {{ question.label }} <span class='asterisk' *ngIf="question.mandatory">*</span>
   </label>
+
+  <small class="form-text text-muted mb-2 question-description" *ngIf="question.description">
+    {{ question.description }}
+  </small>
 
   <ng-container [ngSwitch]="question.id_answer_type">
     <ng-container *ngSwitchCase="'TextBox'">
@@ -58,10 +62,6 @@
       </div>
     </ng-container>
   </ng-container>
-
-  <small class="form-text text-muted" *ngIf="question.description">
-    {{ question.description }}
-  </small>
 
   <div class="invalid-feedback"
        *ngIf="!generatorForm.get(formControlNames[k]).valid && generatorForm.get(formControlNames[k]).touched">

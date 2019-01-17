@@ -5,7 +5,7 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormJson } from '../models/form-json.model';
 import { CanComponentDeactivate } from '../services/can-component-deactivate.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { requiredCheckboxValidator } from '../../directives/required-validator.directive';
+import { requiredCheckboxValidator } from '../directives/required-validator.directive';
 import { UserService } from '../../authentication/user.service';
 import { User } from '../models/user.model';
 import { Question } from '../models/question.model';
@@ -102,7 +102,7 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnD
           this.questionType = questionByTypes;
           this.activity = a;
 
-          if (questionByTypes.blocks) {
+          if (questionByTypes.blocks && questionByTypes.blocks.length > 0) {
             for (const block of questionByTypes.blocks) {
               block.index_start = -1;
               block.index_end = -1;

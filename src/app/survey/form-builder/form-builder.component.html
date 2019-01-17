@@ -3,9 +3,9 @@
     <div class='block my-5'>
       <div *ngFor="let activityName of activity.activity_names; let i = index">
 
-        <h3 class="mb-4">{{ activityName }}</h3>
+        <h3 class="mb-4 activity-name">{{ activityName }}</h3>
 
-        <ng-container *ngIf="questionType.blocks">
+        <ng-container *ngIf="questionType.blocks && questionType.blocks.length > 0">
           <ng-container *ngFor="let question of questionType.questions; let k = index">
             <ng-container *ngIf="k < questionType.blocks[0].index_start">
               <app-dependency-builder [question]="question"
@@ -18,7 +18,7 @@
           </ng-container>
 
           <div class="child-block" *ngFor="let block of questionType.blocks">
-            <h4 class="mb-4">{{ block.label }}</h4>
+            <h4 class="mb-4 block-label">{{ block.label }}</h4>
             <ng-container *ngFor="let question of questionType.questions; let k = index">
               <ng-container *ngIf="block.index_start <= k && k <= block.index_end">
                 <app-dependency-builder [question]="question"
@@ -44,7 +44,7 @@
 
         </ng-container>
 
-        <ng-container *ngIf="!questionType.blocks">
+        <ng-container *ngIf="!questionType.blocks || (questionType.blocks && questionType.blocks.length <= 0)">
           <app-dependency-builder *ngFor="let question of questionType.questions" [question]="question"
                                   [formControlNames]="formControlNames"
                                   [generatorForm]="generatorForm"

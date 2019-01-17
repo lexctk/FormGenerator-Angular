@@ -37,7 +37,7 @@ export class PageBuilderComponent implements OnInit, OnDestroy {
 
   getJson () {
     this.apiService.getFormJson().subscribe(
-      (data: string) => this.success(data), () => this.failed()
+      (data: string) => this.success(data), (error) => this.failed()
     );
   }
 

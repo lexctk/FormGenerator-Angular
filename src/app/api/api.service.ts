@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { FormJson } from '../survey/models/form-json.model';
 import { User } from '../survey/models/user.model';
 import { Data } from '../survey/models/data.model';
 
@@ -11,28 +10,34 @@ import { Data } from '../survey/models/data.model';
 })
 export class ApiService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
-  apiURL = 'https://ecsurvey2019app.azurewebsites.net/api/polldev/35';
+  apiURL = 'https://ecsurvey2019app.azurewebsites.net/api/polldev/53/3'; // TODO type participant
+  // apiURL = 'assets/no-blocks.json';
+  // apiURL = 'assets/form.json';
 
   postURL = 'https://ecsurvey2019app.azurewebsites.net/api/angularapp';
 
   userApiURL = 'assets/user.json';
 
-  // TODO: change error for response: text
   private static handleError(error: HttpErrorResponse) {
+    let errorMessage = '';
+
     if (error.error instanceof ErrorEvent) {
-      console.error('Client-side or network error occurred:', error.error.message);
+      errorMessage = 'Client-side or network error occurred: ' + error.error.message;
     } else {
-      console.error('Backend returned code ${error.status}, ' + 'body was: ${error.error}');
+      errorMessage = 'Backend returned code ' + error.status + '. ' + error.message;
     }
     // return an observable with a user-facing error message
-    return throwError('Something bad happened; please try again later.');
+    return throwError(errorMessage);
   }
 
   getFormJson() {
     return this.http.get(this.apiURL, {responseType: 'text'})
-      .pipe(catchError(ApiService.handleError));
+      .pipe(
+        catchError(ApiService.handleError)
+      );
   }
 
   postFormJson(data: Data) {
@@ -41,12 +46,16 @@ export class ApiService {
     let stringData = JSON.stringify(data);
     stringData = '=' + stringData;
     console.log(stringData);
-    return this.http.post(this.postURL, stringData, { headers, responseType: 'text'})
-      .pipe(catchError(ApiService.handleError));
+    return this.http.post(this.postURL, stringData, {headers, responseType: 'text'})
+      .pipe(
+        catchError(ApiService.handleError)
+      );
   }
 
-  getUserJson () {
+  getUserJson() {
     return this.http.get<User>(this.userApiURL)
-      .pipe(catchError(ApiService.handleError));
+      .pipe(
+        catchError(ApiService.handleError)
+      );
   }
 }

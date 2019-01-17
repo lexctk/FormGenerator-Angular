@@ -2,6 +2,7 @@
   "user_id": 2,
   "username": "Alex",
   "id_event": 35,
+  "position_type_participant": 3,
   "activity": [
     {
       "activity_type": "General",
