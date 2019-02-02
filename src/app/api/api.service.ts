@@ -13,10 +13,7 @@ export class ApiService {
   constructor(private http: HttpClient) {
   }
 
-  apiURL = 'https://ecsurvey2019app.azurewebsites.net/api/polldev/53/3'; // TODO type participant
-  // apiURL = 'assets/no-blocks.json';
-  // apiURL = 'assets/form.json';
-
+  apiURL = 'https://ecsurvey2019app.azurewebsites.net/api/polldev/';
   postURL = 'https://ecsurvey2019app.azurewebsites.net/api/angularapp';
 
   userApiURL = 'assets/user.json';
@@ -33,8 +30,8 @@ export class ApiService {
     return throwError(errorMessage);
   }
 
-  getFormJson() {
-    return this.http.get(this.apiURL, {responseType: 'text'})
+  getFormJson(id_event: number, position_type_participant: number) {
+    return this.http.get(this.apiURL + id_event + '/' + position_type_participant, {responseType: 'text'})
       .pipe(
         catchError(ApiService.handleError)
       );

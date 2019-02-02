@@ -36,8 +36,8 @@ export class PageBuilderComponent implements OnInit, OnDestroy {
   }
 
   getJson () {
-    this.apiService.getFormJson().subscribe(
-      (data: string) => this.success(data), (error) => this.failed()
+    this.apiService.getFormJson(this.user.id_event, this.user.position_type_participant).subscribe(
+      (data: string) => this.success(data), (error) => this.failed(error)
     );
   }
 
@@ -47,10 +47,11 @@ export class PageBuilderComponent implements OnInit, OnDestroy {
     data = data.replace(/\\/g, '');
     this.formJson = <FormJson>JSON.parse(data);
     this.formJsonService.setFormJson(this.formJson);
+
     this.countPages();
   }
 
-  private failed() {
+  private failed(error: string) {
     this.router.navigate(['/404']).then();
   }
 
@@ -67,7 +68,7 @@ export class PageBuilderComponent implements OnInit, OnDestroy {
         }
       }
     }
-    // this.numberOfPages += this.formJson.number_of_pages;
+    this.numberOfPages += this.formJson.number_of_pages;
     this.formJsonService.setNumberOfPages(this.numberOfPages);
   }
 

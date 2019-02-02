@@ -1,7 +1,7 @@
 {
   "user_id": 2,
   "username": "Alex",
-  "id_event": 35,
+  "id_event": 53,
   "position_type_participant": 3,
   "activity": [
     {
@@ -42,3 +42,4 @@
 
   ]
 }
+
