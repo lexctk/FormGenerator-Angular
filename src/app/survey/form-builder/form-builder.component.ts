@@ -190,8 +190,6 @@ export class FormBuilderComponent implements OnInit, CanComponentDeactivate, OnD
       const data = this.jsonFormatService.getReplyFromForm(this.generatorForm.value);
       this.apiService.postFormJson(data).subscribe();
 
-      console.log(data);
-
       if (this.currentPage < this.numberOfPages - 1) {
         this.currentPage++;
         this.router.navigate(['/survey/' + this.currentPage]).then();

@@ -42,7 +42,6 @@ export class ApiService {
 
     let stringData = JSON.stringify(data);
     stringData = '=' + stringData;
-    console.log(stringData);
     return this.http.post(this.postURL, stringData, {headers, responseType: 'text'})
       .pipe(
         catchError(ApiService.handleError)

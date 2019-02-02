@@ -68,7 +68,6 @@ export class PageBuilderComponent implements OnInit, OnDestroy {
         }
       }
     }
-    this.numberOfPages += this.formJson.number_of_pages;
     this.formJsonService.setNumberOfPages(this.numberOfPages);
   }
 
